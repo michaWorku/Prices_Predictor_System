@@ -1,5 +1,5 @@
 /bin
 /lib
 /lib64
-
+/analysis/analyze_src/__pycache__
 pyvenv.cfg
