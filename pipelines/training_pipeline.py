@@ -15,11 +15,11 @@ def ml_pipeline():
     
     # Data Ingestion Step
     raw_data = data_ingestion_step(
-        file_path="../data/archive.zip"
+        file_path=".../data/archive.zip"
     )
 
     # Handling Missing Values Step
-
+    filled_data = handle_missing_values_step(raw_data)
 
     # Feature Engineering Step
     
