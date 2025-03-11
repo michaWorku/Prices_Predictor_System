@@ -3,6 +3,7 @@ from steps.handle_missing_values_step import handle_missing_values_step
 from steps.feature_engineering_step import feature_engineering_step
 from steps.outlier_detection_step import outlier_detection_step
 from steps.data_splitter_step import data_splitter_step
+from steps.model_building_step import model_building_step
 from zenml import Model, pipeline, step
 
 
@@ -14,11 +15,11 @@ from zenml import Model, pipeline, step
 )
 def ml_pipeline():
     """Define an end-to-end machine learning pipeline."""
-    model = Model(name="prices_predictor")
+    # model = Model(name="prices_predictor")
     
     # Data Ingestion Step
     raw_data = data_ingestion_step(
-        file_path=".../data/archive.zip"
+        file_path="/home/micha/Downloads/portfolio/guided projects/end-to-end-ml/prices-predictor-system/Prices_Predictor_System/data/archive.zip"
     )
 
     # Handling Missing Values Step
@@ -38,7 +39,7 @@ def ml_pipeline():
 
 
     # Model Building Step
-
+    model = model_building_step(X_train=X_train, y_train=y_train)
 
     # Model Evaluation Step
 
